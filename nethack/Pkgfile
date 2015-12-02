@@ -1,0 +1,50 @@
+# Description: NetHack! (originally in tilman repo, modified)
+# URL: http://www.nethack.org
+# Packager: arcetera, echo iue@trnspljc.890 | tr ietursnpl890jc acprlsurecomed
+# Depends on:
+
+name=nethack
+version=3.4.3
+release=6
+source=(http://downloads.sourceforge.net/project/$name/$name/$version/$name-343-src.tgz \
+        http://www.saunalahti.fi/~juklahta/nh/nh343jl.diff \
+        $name-gzip.diff)
+
+build () {
+	cd $name-$version
+
+	patch -Np1 -i ../$name-gzip.diff
+	patch -Np1 -i ../nh343jl.diff
+
+	cd sys/unix
+	sh setup.sh
+
+	cd $SRC/$name-$version/include
+
+	sed -i -e 's|/usr/games/lib/nethackdir|/usr/share/nethack/|g' config.h
+
+	echo "\
+#define MENU_COLOR_REGEX
+#define DLB
+" >> config.h
+
+	sed -i -e 's|^/\* #define LINUX|#define LINUX|' unixconf.h
+
+	cd $SRC/$name-$version/src
+	sed -i -e 's|WINTTYLIB = -ltermlib|# WINTTYLIB = -ltermlib|g' Makefile
+	sed -i -e 's|# WINTTYLIB = -lncurses|WINTTYLIB = -lncurses|g' Makefile
+	cd ..
+	sed -i -e 's|PREFIX[\t]* = /usr|PREFIX   = $(PKG)/usr|g' Makefile
+	sed -i -e 's|GAMEDIR  = $(PREFIX)/games/lib/$(GAME)dir|GAMEDIR  = $(PREFIX)/lib/$(GAME)dir|g' Makefile
+	sed -i -e 's|GAMEGRP  = bin|GAMEGRP  = root|' Makefile
+	sed -i -e 's|SHELLDIR = $(PREFIX)/games|SHELLDIR = $(PREFIX)/bin|g' Makefile
+
+	mkdir -p $PKG/usr/share
+
+	make
+	make install
+
+	cd $PKG/usr/bin
+	mv $PKG/usr/lib/nethackdir $PKG/usr/share/nethack
+	sed -i -e "s|HACKDIR=$PKG/usr/lib/nethackdir|HACKDIR=/usr/share/nethack|g" nethack
+}

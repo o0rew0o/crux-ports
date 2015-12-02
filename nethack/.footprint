@@ -1,0 +1,15 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/nethack
+drwxr-xr-x	root/root	usr/lib/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/nethack/
+drwxr-xr-x	root/root	usr/share/nethack/bones/
+-rw-r--r--	root/root	usr/share/nethack/license
+-rw-r--r--	root/root	usr/share/nethack/logfile (EMPTY)
+-rwsr-xr-x	root/root	usr/share/nethack/nethack
+-rw-r--r--	root/root	usr/share/nethack/nhdat
+-rw-r--r--	root/root	usr/share/nethack/perm (EMPTY)
+-rw-r--r--	root/root	usr/share/nethack/record (EMPTY)
+-rwxr-xr-x	root/root	usr/share/nethack/recover
+drwxr-xr-x	root/root	usr/share/nethack/save/
