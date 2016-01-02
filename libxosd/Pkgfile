@@ -5,13 +5,13 @@
 
 name=libxosd
 version=2.2.14
-release=1
-source=(http://downloads.sourceforge.net/project/libxosd/libxosd/xosd-2.2.14/xosd-2.2.14.tar.gz)
+release=2
+source=(http://archive.ubuntu.com/ubuntu/pool/universe/x/xosd/xosd_2.2.14.orig.tar.gz)
 
 build() {
 	cd xosd-$version
 
     ./configure
 	make
-	make DESTDIR=$PKG install
+	make DESTDIR=$PKG prefix=/usr install
 }
