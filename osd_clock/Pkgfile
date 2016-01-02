@@ -4,7 +4,7 @@
 
 name=osd_clock
 version=0.5
-release=1
+release=2
 source=(
   https://launchpad.net/ubuntu/+archive/primary/+files/osdclock_0.5.orig.tar.gz
  01-conglomeration.dpatch
@@ -12,6 +12,10 @@ source=(
 
 build() {
 	cd $name-$version.orig
+
+    patch -p1 -i ../01-conglomeration.dpatch
+    
+    mkdir -p $PKG/usr/bin
 
     make
 	make PREFIX=$PKG/usr install
