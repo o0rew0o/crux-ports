@@ -4,7 +4,7 @@
 
 name=osd_clock
 version=0.5
-release=2
+release=3
 source=(
   https://launchpad.net/ubuntu/+archive/primary/+files/osdclock_0.5.orig.tar.gz
  01-conglomeration.dpatch
