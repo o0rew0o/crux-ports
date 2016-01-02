@@ -1,0 +1,18 @@
+# Description: A clock which uses the X On-Screen Display library.
+# Packager:    arcetera, arcetera@cock.li
+# Depends on:  libxosd 
+
+name=osd_clock
+version=0.5
+release=1
+source=(
+  https://launchpad.net/ubuntu/+archive/primary/+files/osdclock_0.5.orig.tar.gz
+ 01-conglomeration.dpatch
+)
+
+build() {
+	cd $name-$version.orig
+
+    make
+	make PREFIX=$PKG/usr install
+}
