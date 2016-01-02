@@ -1,0 +1,17 @@
+# Description: An OSD library for X11.
+# URL:         http://sourceforge.net/projects/libxosd/
+# Packager:    arcetera, arcetera@cock.li 
+# Depends on:  
+
+name=libxosd
+version=2.2.14
+release=1
+source=(http://downloads.sourceforge.net/project/libxosd/libxosd/xosd-2.2.14/xosd-2.2.14.tar.gz)
+
+build() {
+	cd xosd-$version
+
+    ./configure
+	make
+	make DESTDIR=$PKG install
+}
