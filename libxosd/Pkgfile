@@ -5,7 +5,7 @@
 
 name=libxosd
 version=2.2.14
-release=2
+release=3
 source=(http://archive.ubuntu.com/ubuntu/pool/universe/x/xosd/xosd_2.2.14.orig.tar.gz)
 
 build() {
