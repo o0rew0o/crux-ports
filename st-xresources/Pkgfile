@@ -5,7 +5,7 @@
 
 name=st-xresources
 version=git
-release=1
+release=2
 source=(config.h)
 
 build() {
@@ -21,6 +21,6 @@ build() {
 	mv $SRC/config.h .
 	
 	make
-	make DESTDIR=$PKG install
+	make DESTDIR=$PKG PREFIX=/usr install
 	tic -s st.info
 }
