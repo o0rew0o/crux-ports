@@ -1,0 +1,18 @@
+# Description: The Debian package manager
+# URL:         https://wiki.debian.org/Teams/Dpkg
+# Packager:    arcetera, arcetera@cock.li
+# Depends on:  
+
+name=dpkg
+version=1.18.4
+release=1
+source=(http://noodle.portalus.net/debian/pool/main/d/dpkg/dpkg_1.18.4.tar.xz)
+
+build () {
+	cd $name-$version
+
+	./configure --prefix=/usr --sysconfdir=/etc
+
+	make
+	make DESTDIR=$PKG install
+}
