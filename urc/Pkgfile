@@ -1,0 +1,24 @@
+# Description: Minimal rc script.
+# URL:         https://github.com/ix/urc
+# Packager:    arcetera, arcetera@openmailbox.org
+# Maintainer:  arcetera, arcetera@openmailbox.org
+# Depends on:  git busybox sinit
+
+name=urc
+version=git
+release=1
+source=()
+
+build () {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone git://github.com/ix/urc $name
+		cd $name
+	fi
+
+	install -Dm755 urc $PKG/sbin/urc
+	install -Dm644 urc.conf $PKG/etc/urc.conf
+}
