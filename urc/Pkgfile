@@ -6,7 +6,7 @@
 
 name=urc
 version=git
-release=1
+release=2
 source=()
 
 build () {
@@ -21,4 +21,5 @@ build () {
 
 	install -Dm755 urc $PKG/sbin/urc
 	install -Dm644 urc.conf $PKG/etc/urc.conf
+  install -Dm644 urc.8 $PKG/usr/share/man/man8/urc.8
 }

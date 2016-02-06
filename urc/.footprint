@@ -2,3 +2,8 @@ drwxr-xr-x	root/root	etc/
 -rw-r--r--	root/root	etc/urc.conf
 drwxr-xr-x	root/root	sbin/
 -rwxr-xr-x	root/root	sbin/urc
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man8/
+-rw-r--r--	root/root	usr/share/man/man8/urc.8.gz
