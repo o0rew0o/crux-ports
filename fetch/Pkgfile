@@ -1,0 +1,23 @@
+# Description: A fast, highly customizable system information script.
+# URL:         https://github.com/dylanaraps/fetch
+# Packager:    ix, arcetera@openmailbox.org
+# Depends on:  git xorg-xprop
+# Optional:    scrot xorg-xdpyinfo
+
+name=fetch
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone https://github.com/dylanaraps/fetch.git -b master $name
+		cd $name
+	fi
+
+  make DESTDIR=$PKG install
+}
