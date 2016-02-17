@@ -19,5 +19,7 @@ build() {
 		cd $name
 	fi
 
-  make DESTDIR=$PKG install
+	make DESTDIR=$PKG install
 }
+
+# vim: set noet :
