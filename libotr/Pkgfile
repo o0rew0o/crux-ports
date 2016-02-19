@@ -1,0 +1,18 @@
+# Description: Off-the-Record Messaging Library and Toolkit
+# URL:         http://otr.cypherpunks.ca/
+# Maintainer:  ix, arcetera@openmailbox.org
+# Depends on:  libgcrypt
+
+name=libotr
+version=4.1.0
+release=2
+source=("http://otr.cypherpunks.ca/$name-$version.tar.gz")
+
+build() {
+  cd $name-$version
+
+  ./configure --prefix=/usr
+
+  make
+  make DESTDIR=$PKG install
+}
