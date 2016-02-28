@@ -1,25 +1,17 @@
-# Description: A fast, highly customizable system information script.
-# URL:         https://github.com/dylanaraps/fetch
-# Packager:    ix, arcetera@openmailbox.org
-# Depends on:  git xorg-xprop
-# Optional:    scrot xorg-xdpyinfo
+# Description: Transitional package.
+# URL:         https://github.com/dylanaraps/neofetch
+# Packager:    ix, arcetera at openmailbox dot org
+# Depends on:  neofetch
 
 name=fetch
-version=git
-release=1
+version=0.0
+release=2
 source=()
 
 build() {
-	cd $PKGMK_SOURCE_DIR
+  mkdir -p $PKG/usr/share/fetch
 
-	if cd $name; then
-		git fetch -q; git reset --hard origin/master
-	else
-		git clone https://github.com/dylanaraps/fetch.git -b master $name
-		cd $name
-	fi
+  :> $PKG/usr/share/fetch/deleteme
 
-	make DESTDIR=$PKG install
+  echo "You can remove this package."
 }
-
-# vim: set noet :
