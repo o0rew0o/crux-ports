@@ -1,5 +1,5 @@
 # Collection arcetera, https://github.com/ix/crux-ports
 
 NAME=arcetera
-URL=git://github.com/ix/crux-ports
+URL=git://arcetera.moe/crux-ports.git
 BRANCH=master
