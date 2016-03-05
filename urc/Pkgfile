@@ -1,6 +1,6 @@
 # Description: Minimal rc script.
-# URL:				 https://github.com/ix/urc
-# Packager:		 ix, arcetera@openmailbox.org
+# URL:         https://github.com/ix/urc
+# Packager:    ix, arcetera@openmailbox.org
 # Depends on:  git busybox sinit
 
 name=urc

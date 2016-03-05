@@ -1,6 +1,6 @@
-# Description: NetHack! (originally in tilman repo, modified)
-# URL: http://www.nethack.org
-# Packager: arcetera, echo iue@trnspljc.890 | tr ietursnpl890jc acprlsurecomed
+# Description: NetHack!
+# URL:         http://www.nethack.org
+# Packager:    ix, arcetera@openmailbox.org
 # Depends on:
 
 name=nethack

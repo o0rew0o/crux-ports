@@ -9,13 +9,13 @@ release=1
 source=(https://github.com/strophe/libstrophe/archive/$version.tar.gz)
 
 build() {
-  cd $name-$version
+	cd $name-$version
 
-  ./bootstrap.sh
+	./bootstrap.sh
 
-  CONFIG_SHELL=/bin/bash \
-  ./configure --prefix=/usr
+	CONFIG_SHELL=/bin/bash \
+		./configure --prefix=/usr
 
-  make
+	make
 	make DESTDIR=$PKG install
 }

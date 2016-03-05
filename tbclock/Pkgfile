@@ -1,7 +1,6 @@
 # Description: A ncurses binary clock.
 # URL:         https://tamentis.com/projects/tbclock/
-# Packager:    Name and email go here.
-# Maintainer:  6c37 Team, https://github.com/6c37/crux-ports/issues
+# Packager:    ix, arcetera@openmailbox.org
 # Depends on:
 
 name=tbclock

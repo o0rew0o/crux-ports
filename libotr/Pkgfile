@@ -9,10 +9,10 @@ release=2
 source=("http://otr.cypherpunks.ca/$name-$version.tar.gz")
 
 build() {
-  cd $name-$version
+	cd $name-$version
 
-  ./configure --prefix=/usr
+	./configure --prefix=/usr
 
-  make
-  make DESTDIR=$PKG install
+	make
+	make DESTDIR=$PKG install
 }

@@ -1,7 +1,7 @@
 # Description: The Debian package manager
 # URL:         https://wiki.debian.org/Teams/Dpkg
-# Packager:    arcetera, arcetera@openmailbox.org
-# Depends on:  
+# Packager:    ix, arcetera@openmailbox.org
+# Depends on:
 
 name=dpkg
 version=1.18.4
@@ -12,14 +12,15 @@ build () {
 	cd $name-$version
 
 	./configure \
-	  --prefix=/usr \ 
-	  --sysconfdir=/etc \
-	  --disable-start-stop-daemon \
-	  --disable-update-alternatives \
-	  --disable-dselect
+		--prefix=/usr \
+		--sysconfdir=/etc \
+		--disable-start-stop-daemon \
+		--disable-update-alternatives \
+		--disable-dselect
 
 	make
 	make DESTDIR=$PKG install
 
-	mv $PKG/usr/Dpkg.pm $PKG/usr/lib/perl5/5.22/Dpkg.pm # TODO: Please don't do this
+	mv $PKG/usr/Dpkg.pm $PKG/usr/lib/perl5/5.22/Dpkg.pm
+	mv $PKG/usr/Dpkg $PKG/usr/lib/perl5/5.22/Dpkg
 }

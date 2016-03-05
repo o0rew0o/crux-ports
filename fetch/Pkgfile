@@ -9,9 +9,9 @@ release=2
 source=()
 
 build() {
-  mkdir -p $PKG/usr/share/fetch
+	mkdir -p $PKG/usr/share/fetch
 
-  :> $PKG/usr/share/fetch/deleteme
+	:> $PKG/usr/share/fetch/deleteme
 
-  echo "You can remove this package."
+	echo "You can remove this package."
 }
