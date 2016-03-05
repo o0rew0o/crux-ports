@@ -21,6 +21,6 @@ build () {
 	make
 	make DESTDIR=$PKG install
 
-	mv $PKG/usr/Dpkg.pm $PKG/usr/lib/perl5/5.22/Dpkg.pm
-	mv $PKG/usr/Dpkg $PKG/usr/lib/perl5/5.22/Dpkg
+	#mv $PKG/usr/Dpkg.pm $PKG/usr/lib/perl5/5.22/Dpkg.pm
+	#mv $PKG/usr/Dpkg $PKG/usr/lib/perl5/5.22/Dpkg
 }
