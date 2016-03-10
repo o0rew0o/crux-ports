@@ -5,7 +5,7 @@
 
 name=urc
 version=git
-release=4
+release=5
 source=()
 
 build() {
@@ -23,4 +23,5 @@ build() {
 	install -Dm755 poweroff $PKG/sbin/poweroff
 	install -Dm644 urc.conf $PKG/etc/urc.conf
 	install -Dm644 urc.8 $PKG/usr/share/man/man8/urc.8
+	install -Dm755 urc.local $PKG/etc/urc.local
 }
