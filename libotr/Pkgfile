@@ -4,8 +4,8 @@
 # Depends on:  libgcrypt
 
 name=libotr
-version=4.1.0
-release=2
+version=4.1.1
+release=1
 source=("http://otr.cypherpunks.ca/$name-$version.tar.gz")
 
 build() {
