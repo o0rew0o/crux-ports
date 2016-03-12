@@ -1,0 +1,15 @@
+# Description: Perl 6 module installer.
+# URL:         https://github.com/tadzik/panda
+# Packager:    ix, arcetera@openmailbox.org
+# Depends on:  rakudo
+
+name=panda
+version=2016.02
+release=1
+source=(https://github.com/tadzik/$name/archive/$version.tar.gz)
+
+build() {
+	cd $name-$version
+
+	perl6 bootstrap.pl --prefix="$PKG/usr"
+}
