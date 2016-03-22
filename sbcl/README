@@ -1,5 +1,0 @@
-You probably need a Common Lisp implementation.
-
-clisp is available in opt/. I recommend installing sbcl first, then removing it post-compilation; sbcl can be installed with sbcl itself.
-
-You need to change "sh make.sh" to "sh make.sh clisp".

@@ -2,10 +2,11 @@
 # URL:         http://www.sbcl.org/
 # Packager:    ix, arcetera@openmailbox.org
 # Depends on:
+# Optional:    clisp
 
 name=sbcl
 version=1.3.3
-release=1
+release=2
 source=(http://prdownloads.sourceforge.net/sbcl/sbcl-1.3.3-source.tar.bz2)
 
 build() {
@@ -24,7 +25,11 @@ build() {
 	(disable :largefile)))
 EOF
 
-	sh make.sh --prefix=/usr
+	if type -p sbcl 2>/dev/null; then
+		sh make.sh --prefix=/usr
+	else
+		sh make.sh clisp --prefix=/usr
+	fi
 
 	SBCL_HOME='' INSTALL_ROOT="$PKG/usr" sh install.sh
 }
