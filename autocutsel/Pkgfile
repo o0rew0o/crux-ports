@@ -1,0 +1,27 @@
+# Description: Automated xcutsel.
+# URL: 	       https://github.com/sigmike/autocutsel
+# Packager:    tudurom, xenogenesis@openmailbox.org
+# Depends on:  xorg-libxav
+
+name=autocutsel
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q
+		git reset --hard origin/master
+	else
+		git clone "git://github.com/sigmike/autocutsel.git" $name
+		cd $name
+	fi
+	mkdir -p "$PKG/usr/bin"
+
+	./bootstrap
+	./configure --prefix="$PKG/usr"
+
+	make install
+}

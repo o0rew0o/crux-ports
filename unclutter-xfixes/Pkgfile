@@ -1,0 +1,27 @@
+# Description: A rewrite of unclutter using the x11-xfixes extension
+# URL: 	       https://github.com/airblader/unclutter-xfixes
+# Packager:    tudurom, xenogenesis@openmailbox.org
+# Depends on:  xorg-libxi xorg-libx11 xorg-libxfixes libev asciidoc
+
+name=unclutter-xfixes
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q
+		git reset --hard origin/master
+	else
+		git clone "git://github.com/airblader/unclutter-xfixes.git" $name
+		cd $name
+	fi
+	mkdir -p "$PKG/usr/bin"
+
+	make all
+
+	make DESTDIR="$PKG" install
+	install -Dm644 LICENSE "$PKG/usr/share/licenses/$name/LICENSE"
+}

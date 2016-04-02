@@ -1,0 +1,26 @@
+# Description: Queries the X Resource Database
+# URL: 	       https://github.com/arianon/xrq
+# Packager:    tudurom, xenogenesis@openmailbox.org
+# Depends on:  xorg-libx11 git
+
+name=xrq
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q
+		git reset --hard origin/master
+	else
+		git clone "git://github.com/arianon/xrq.git" $name
+		cd $name
+	fi
+	mkdir -p "$PKG/usr/bin"
+
+	make all
+
+	make PREFIX="$PKG/usr" install
+}
