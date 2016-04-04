@@ -1,0 +1,27 @@
+# Description: Small utility that you can use to make a text scroll.
+# URL:         http://git.z3bra.org/skroll/file/README.html
+# Packager:    tudurom, xenogenesis@openmailbox.org
+# Depends on:
+
+name=skroll
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone git://z3bra.org/skroll -b master $name
+		cd $name
+	fi
+
+	mkdir -p "$PKG/usr/bin"
+
+  gcc skroll.c -o skroll -Wall -O2
+
+  install -D -m 0755 skroll "$PKG/usr/local/bin/skroll"
+  install -D -m 0644 skroll.1 "$PKG/usr/local/share/man/man1/skroll.1"
+}
