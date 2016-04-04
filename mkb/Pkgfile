@@ -1,0 +1,23 @@
+# Description: Represent a percentage as a fancy progress bar.
+# URL:         http://git.z3bra.org/mkb
+# Packager:    tudurom, xenogenesis@openmailbox.org
+# Depends on:
+
+name=mkb
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone git://z3bra.org/mkb -b master $name
+		cd $name
+	fi
+  
+  make
+  make install PREFIX="$PKG/usr"
+}
