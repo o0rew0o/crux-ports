@@ -1,0 +1,25 @@
+# Description: Set of utilities for getting info about connected displays.
+# URL:         https://arcetera.moe/git/disputils/
+# Packager:    tudurom, xenogenesis@openmailbox.org
+# Depends on:  git xorg-libxcb
+
+name=disputils
+version=git
+release=1
+source=()
+
+build() {
+	cd $PKGMK_SOURCE_DIR
+
+	if cd $name; then
+		git fetch -q; git reset --hard origin/master
+	else
+		git clone git://arcetera.moe/disputils.git -b master $name
+		cd $name
+	fi
+
+	mkdir -p "$PKG/usr/bin"
+
+	make
+	make DESTDIR="$PKG" PREFIX="/usr" install
+}

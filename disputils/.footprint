@@ -1,0 +1,13 @@
+drwxr-xr-x	root/root	usr/
+drwxr-xr-x	root/root	usr/bin/
+-rwxr-xr-x	root/root	usr/bin/dattr
+-rwxr-xr-x	root/root	usr/bin/lsd
+-rwxr-xr-x	root/root	usr/bin/pfd
+-rwxr-xr-x	root/root	usr/bin/ppd
+drwxr-xr-x	root/root	usr/share/
+drwxr-xr-x	root/root	usr/share/man/
+drwxr-xr-x	root/root	usr/share/man/man1/
+-rw-r--r--	root/root	usr/share/man/man1/dattr.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/lsd.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/pfd.1.gz
+-rw-r--r--	root/root	usr/share/man/man1/ppd.1.gz
